@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <a href="{% url 'notice_post'%}">글작성</a><br>
+
+        {% for notice in notices %}
+            {{notice.title}}
+            {{notice.created_date}}
+
+        <a href="{%url 'notice_detail' notice.id%}">디테일들어가기</a>
+
+        {% endfor %}
+    
+</body>
+</html>
