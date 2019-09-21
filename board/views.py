@@ -25,17 +25,17 @@ def notice_post(request):
     return render(request, 'notice_post.html' , {'notice_form' : forms})
 
 def notice_edit(request, notice_detail_id):
-    detail = get_object_or_404(NoticeBoard , pk = notice_detail_id)
+    notice_detail = get_object_or_404(NoticeBoard , pk = notice_detail_id)
 
-    edit_notice_form = NoticeForm(instance = detail)
+    edit_notice_form = NoticeForm(instance = notice_detail)
 
     if request.method == 'POST':
-        edit_notice_form = NoticeForm(request.POST , instance = detail)
+        edit_notice_form = NoticeForm(request.POST , instance = notice_detail)
         if edit_notice_form.is_valid():
             edit_notice_form.save()
             return redirect('notice')
 
-    return render(request, 'notice_edit.html', {'edit_notice_form' : edit_notice_form} )
+    return render(request, 'notice_edit.html', {'edit_notice_form' : edit_notice_form ,'notice_detail' : notice_detail} )
 
 
 # def notice_edit(request , )

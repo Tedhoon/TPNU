@@ -1,8 +1,7 @@
-<form action="{% url 'notice_edit' detail.id %}" method="POST">
-    {{edit_notice_form}}
+<form action="{% url 'notice_edit' notice_detail.id %}" method="POST">
+    {{edit_notice_form.as_p|safe}}
     {% csrf_token %}
-
-    edit
+    {{edit_notice_form.media}}
 
 <input type="submit" value="수정완료">
 
