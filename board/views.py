@@ -38,6 +38,10 @@ def notice_edit(request, notice_detail_id):
     return render(request, 'notice_edit.html', {'edit_notice_form' : edit_notice_form ,'notice_detail' : notice_detail} )
 
 
-# def notice_edit(request , )
+def notice_delete(request ,notice_detail_id):
+    # if username == ~:
+    notice_detail = get_object_or_404(NoticeBoard, pk = notice_detail_id)
+    notice_detail.delete()
+    return redirect('notice')
         
     
