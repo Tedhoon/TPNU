@@ -11,8 +11,8 @@
     
     <form action="{% url 'notice_post'%}" method="POST" enctype="multipart/form-data">
         
-        {{form.media}}     
-        {{notice_form.as_p|safe}}
+        {{ notice_form.media }}     
+        {{ notice_form.as_p|safe }}
 
         {% csrf_token %}
     
