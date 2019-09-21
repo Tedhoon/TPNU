@@ -8,13 +8,16 @@
 </head>
 <body>
 
-
-    <form action="{% url 'notice_post'%}" method="POST">
-            {{notice_form.as_p}}
-        
-            {% csrf_token %}
     
-            <input type="submit" value="글쓰기">
+    <form action="{% url 'notice_post'%}" method="POST" enctype="multipart/form-data">
+        
+        {{form.media}}     
+        {{notice_form.as_p|safe}}
+
+        {% csrf_token %}
+    
+        
+        <input type="submit" value="글쓰기">
     </form> 
         
 
