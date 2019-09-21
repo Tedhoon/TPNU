@@ -1,6 +1,10 @@
-{{notice_detail.id}}
-{{notice_detail.title}}
-{{notice_detail.text}}
-{{notice_detail.hits}}
-{{notice_detail.created_date}}
-{{notice_detail.author}}
+
+title : {{notice_detail.title}}
+
+<br> text : {{notice_detail.text}}
+<br> hits : {{notice_detail.hits}}
+<br> created_date : {{notice_detail.created_date}}
+<br> author : {{notice_detail.author}}
+
+
+<a href="{% url 'notice_edit' notice_detail.id %}">수정</a>

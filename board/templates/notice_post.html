@@ -10,11 +10,10 @@
 
 
     <form action="{% url 'notice_post'%}" method="POST">
-            {{forms.as_p}}
+            {{notice_form.as_p}}
         
             {% csrf_token %}
-        
-            <!-- {{editblogform}} -->
+    
             <input type="submit" value="글쓰기">
     </form> 
         

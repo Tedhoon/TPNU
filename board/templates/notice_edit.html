@@ -1,0 +1,7 @@
+<form action="{% url 'notice_edit' detail.id %}" method="POST">
+    {{edit_notice_form}}
+    {% csrf_token %}
+
+<input type="submit" value="수정완료">
+
+</form>

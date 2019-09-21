@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from .forms import *
-# Create your views here.
+from django.contrib.auth.decorators import login_required
+
 
 
 def notice(request):
@@ -12,7 +13,7 @@ def notice_detail(request, notice_id):
     notice_detail = get_object_or_404(NoticeBoard , pk = notice_id)
     return render(request, 'notice_detail.html' ,{'notice_detail' : notice_detail})
 
-
+@login_required
 def notice_post(request):
     if request.method == 'POST':
         forms = NoticeForm(request.POST)
@@ -21,7 +22,20 @@ def notice_post(request):
             return redirect('notice')
     else:
         forms = NoticeForm()
-    return render(request, 'notice_post.html' , {'forms' : forms})
+    return render(request, 'notice_post.html' , {'notice_form' : forms})
+
+def notice_edit(request, notice_detail_id):
+    detail = get_object_or_404(NoticeBoard , pk = notice_detail_id)
+
+    edit_notice_form = NoticeForm(instance = detail)
+
+    if request.method == 'POST':
+        edit_notice_form = NoticeForm(request.POST , instance = detail)
+        if edit_notice_form.is_valid():
+            edit_notice_form.save()
+            return redirect('notice')
+
+    return render(request, 'notice_edit.html', {'edit_notice_form' : edit_notice_form} )
 
 
 # def notice_edit(request , )
