@@ -2,12 +2,18 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
-
+# pagination
+from django.core.paginator import Paginator
 
 
 def notice(request):
     notice = NoticeBoard.objects.all().order_by('-id')
-    return render(request, 'notice.html' , {'notices' : notice})
+
+    paginator = Paginator(notice , 10) #10페이지씩 자르기
+    page = request.GET.get('page')
+    posts = paginator.get_page(page) #request된 페이지를 담는다
+
+    return render(request, 'notice.html' , {'notices' : notice , 'notice_posts' : posts})
 
 def notice_detail(request, notice_id):
     notice_detail = get_object_or_404(NoticeBoard , pk = notice_id)

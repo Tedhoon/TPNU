@@ -7,13 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+        {# 글 작성 버튼 #}
 
         {%if user.is_authenticated %}
             <a href="{% url 'notice_post'%}">글작성</a><br>
         {% endif %}
 
         
-        {% for notice in notices %}
+
+
+        {# 페이지네이션을 통한 객체 불러오기 #}
+
+        {% for notice in notice_posts %}
             {{notice.title}}
             {{notice.created_date}}
 
@@ -22,6 +27,21 @@
         <br>
 
         {% endfor %}
-    
+        
+        {% if notice_posts.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{notice_posts.previous_page_number}}">Previous</a>
+        {% endif %}
+
+        <span>{{notice_posts.number}}</span>
+        <span>of</span>
+        <span>{{notice_posts.paginator.num_pages}}</span>
+
+        {% if notice_posts.has_next %}
+        <a href="?page={{notice_posts.next_page_number}}">Next</a>
+        <a href="?page={{notice_posts.paginator.num_pages}}">Last</a>
+        {% endif %}
+        
+
 </body>
 </html>
