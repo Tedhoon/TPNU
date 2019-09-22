@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.views.generic.edit import CreateView
 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.urls import reverse_lazy
 
 
@@ -93,10 +93,14 @@ def notice_edit(request, notice_detail_id):
     return render(request, 'notice_edit.html', {'edit_notice_form' : edit_notice_form ,'notice_detail' : notice_detail} )
 
 
-def notice_delete(request ,notice_detail_id):
-    # if username == ~:
+def notice_delete(request , notice_detail_id):
     notice_detail = get_object_or_404(NoticeBoard, pk = notice_detail_id)
+    
+    # notice_detail = get_object_or_404(NoticeBoard, pk = notice_detail_id)
     notice_detail.delete()
     return redirect('notice')
         
+    # if self.request.user != notice_detail.author:
+    #     msg = "권한이 없습니다"
+    #     return HttpResponse(msg, status=404)
     

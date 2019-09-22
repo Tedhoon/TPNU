@@ -9,7 +9,13 @@ title : {{notice_detail.title|safe}}
 
 <br>
 
-{%if user.is_authenticated %}
+{% if user.is_authenticated and user.username == notice_detail.author.username %}
+
     <a href="{% url 'notice_edit' notice_detail.id %}">수정</a>
     <a href="{% url 'notice_delete' notice_detail.id %}">삭제</a>
-{%endif%}
+
+{% endif %}
+
+
+
+     
