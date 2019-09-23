@@ -13,8 +13,10 @@ urlpatterns = [
     # path('notice/post/', notice_post , name = 'notice_post'),
     path('notice/post/', NoticePost.as_view() , name = 'notice_post'),
     path('notice/edit/<int:notice_detail_id>/' , notice_edit , name = 'notice_edit'),
-    path('notice/delete/<int:notice_detail_id>/' , notice_delete , name = 'notice_delete'),
+    # path('notice/delete/<int:notice_detail_id>/' , notice_delete , name = 'notice_delete'),
+    path('notice/delete/<slug:pk>/', NoticeDelete.as_view() , name = 'notice_delete'),
     # path('ckeditor/', include('ckeditor_uploader.urls')),
+   
     path('upload/', login_required(views_ckeditor.upload), name='ckeditor_upload'),
     path('browse/', never_cache(login_required(views_ckeditor.browse)), name='ckeditor_browse'),
     

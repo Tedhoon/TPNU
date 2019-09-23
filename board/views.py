@@ -4,13 +4,14 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 # pagination
 from django.core.paginator import Paginator
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView , UpdateView , DeleteView 
 
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.urls import reverse_lazy
 
 
 
+from django.contrib.auth.models import User
 
 
 
@@ -25,26 +26,10 @@ def notice(request):
 
 
 
-
-
 def notice_detail(request, notice_id):
     notice_detail = get_object_or_404(NoticeBoard , pk = notice_id)
     return render(request, 'notice_detail.html' ,{'notice_detail' : notice_detail})
 
-
-
-
-
-# @login_required
-# def notice_post(request):
-#     if request.method == 'POST':
-#         forms = NoticeForm(request.POST)
-#         if forms.is_valid():
-#             forms.save()
-#             return redirect('notice')
-#     else:
-#         forms = NoticeForm()
-#     return render(request, 'notice_post.html' , {'notice_form' : forms})
 
 
 
@@ -64,18 +49,10 @@ class NoticePost(CreateView):
             return HttpResponseRedirect(reverse_lazy('notice'))
         return render(request, 'notice_post.html', {'notice_form': form})
 
-# class NoticePost(CreateView):
-#     form = NoticeForm()
-#     template_name = 'notice_post.html'
-    
 
-    # def form_valid(self, form):
-    #     form.instance.author.id = self.request.user.id
-    #     if form.is_valid():
-    #         form.instance.save()
-    #         return redirect('/')
-    #     else:
-    #         return self.render_to_response({'notice_form':form})
+NoitcePost = NoticePost.as_view()
+NoticePost_permission = login_required(NoticePost)
+#근데 어차피 로그인 안하면 anonymous user여서 글 등록 자체가 안된다...!
 
 
 
@@ -84,23 +61,43 @@ def notice_edit(request, notice_detail_id):
 
     edit_notice_form = NoticeForm(instance = notice_detail)
 
-    if request.method == 'POST':
+    if request.method == 'POST' and User == "gt0305":
         edit_notice_form = NoticeForm(request.POST , instance = notice_detail)
         if edit_notice_form.is_valid():
             edit_notice_form.save()
             return redirect('notice')
 
+
     return render(request, 'notice_edit.html', {'edit_notice_form' : edit_notice_form ,'notice_detail' : notice_detail} )
 
 
-def notice_delete(request , notice_detail_id):
-    notice_detail = get_object_or_404(NoticeBoard, pk = notice_detail_id)
+
+# def notice_delete(request , notice_detail_id):
+#     notice_detail = get_object_or_404(NoticeBoard, pk = notice_detail_id)
     
-    # notice_detail = get_object_or_404(NoticeBoard, pk = notice_detail_id)
-    notice_detail.delete()
-    return redirect('notice')
+#     notice_detail.delete()
+#     return redirect('notice')
         
-    # if self.request.user != notice_detail.author:
+    # if self.request.user != notice_detail.author.username:
     #     msg = "권한이 없습니다"
     #     return HttpResponse(msg, status=404)
+
+class NoticeDelete(DeleteView):
+
+    model = NoticeBoard
+    success_url = reverse_lazy('notice')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object() #이게 타이틀임
+        self.author = self.get_object().author
+
+        if self.request.user == self.author:
+            
+            success_url = self.get_success_url()
+
+            self.object.delete()
+            return HttpResponseRedirect(success_url)
+
+        else:
+            return HttpResponse("너는 지울 수 없다..")
     
