@@ -39,6 +39,8 @@ class NoticePost(CreateView):
         return render(request, 'notice_post.html', context)
 
     def post(self, request, *args, **kwargs):
+        if not request.user.is_staff: # staff 아닌 user는 글 작성 못하게!
+            return HttpResponse("땡!")
         form = NoticeForm(request.POST)
         if form.is_valid():
             form.instance.author = self.request.user

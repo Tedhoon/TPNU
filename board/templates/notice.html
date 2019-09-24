@@ -9,7 +9,7 @@
 <body>
         {# 글 작성 버튼 #}
 
-        {%if user.is_authenticated %}
+        {%if user.is_authenticated and user.is_staff %}
             <a href="{% url 'notice_post'%}">글작성</a><br>
         {% endif %}
 
