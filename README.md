@@ -2,7 +2,7 @@
 
 pillow
 
-ckeditor_uploader
+django-ckeditor
 
 beautifulsoup4  
 
