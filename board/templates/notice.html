@@ -20,7 +20,8 @@
 
         {% for notice in notice_posts %}
             {{notice.title}}
-            {{notice.created_date}}
+            
+            조회수 : {{notice.hits}}
 
         <a href="{%url 'notice_detail' notice.id%}">디테일들어가기</a>
         

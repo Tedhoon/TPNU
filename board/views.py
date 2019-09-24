@@ -61,7 +61,8 @@ def notice_edit(request, notice_detail_id):
 
     edit_notice_form = NoticeForm(instance = notice_detail)
 
-    if request.method == 'POST' and User == "gt0305":
+    # if request.method == 'POST' and User == "gt0305:
+    if request.method == 'POST':
         edit_notice_form = NoticeForm(request.POST , instance = notice_detail)
         if edit_notice_form.is_valid():
             edit_notice_form.save()
@@ -89,7 +90,7 @@ class NoticeDelete(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object() #이게 타이틀임
-        self.author = self.get_object().author
+        self.author = self.get_object().author # 작성자 name
 
         if self.request.user == self.author:
             

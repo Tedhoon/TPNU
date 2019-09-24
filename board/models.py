@@ -11,11 +11,17 @@ class NoticeBoard(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,on_delete=models.CASCADE) # 유저 지워지면 다 지워지게
     text = RichTextUploadingField()
     created_date = models.DateTimeField(auto_now_add=True)
-    hits =  models.IntegerField(null=True, blank=True) #조회수
+    hits =  models.PositiveIntegerField(default = 0) #조회수
 
     def __str__(self):
         return self.title
     
+    @property
+    def update_counter(self):
+        self.hits += 1
+        self.save()
+    
+
     # class Meta:
     #     author_name =     
 
