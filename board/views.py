@@ -10,7 +10,7 @@ from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.urls import reverse_lazy
 
 
-
+from django.contrib import messages
 from django.contrib.auth.models import User
 
 
@@ -45,7 +45,7 @@ class NoticePost(CreateView):
             form.instance.author = self.request.user
             form.instance.save()
             form.save()
-            
+            # messages.info(request, '글이 등록 되었습니다!')
             return HttpResponseRedirect(reverse_lazy('notice'))
         return render(request, 'notice_post.html', {'notice_form': form})
 
@@ -61,9 +61,12 @@ def notice_edit(request, notice_detail_id):
 
     edit_notice_form = NoticeForm(instance = notice_detail)
 
-    # if request.method == 'POST' and User == "gt0305:
     if request.method == 'POST':
         edit_notice_form = NoticeForm(request.POST , instance = notice_detail)
+        
+        if request.user != notice_detail.author:
+            return HttpResponse("땡!")
+
         if edit_notice_form.is_valid():
             edit_notice_form.save()
             return redirect('notice')
