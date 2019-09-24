@@ -1,0 +1,23 @@
+
+title : {{free_detail.title|safe}}
+
+<br> text : {{free_detail.text|safe}}
+<br> hits : {{free_detail.hits}}
+<br> created_date : {{free_detail.created_date}}
+<br> author : {{free_detail.author}}
+
+
+<br>
+<div style="display :none;">{{free_detail.update_counter}} </div>
+
+
+{% if user.is_authenticated and user.username == free_detail.author.username %}
+
+    <a href="{% url 'free_edit' free_detail.id %}">수정</a>
+    <a href="{% url 'free_delete' free_detail.id %}">삭제</a>
+
+{% endif %}
+
+
+
+     

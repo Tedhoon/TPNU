@@ -4,13 +4,12 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 # pagination
 from django.core.paginator import Paginator
-from django.views.generic.edit import CreateView , UpdateView , DeleteView 
+from django.views.generic.edit import CreateView , DeleteView 
 
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.urls import reverse_lazy
 
-
-from django.contrib import messages
+# from django.contrib import messages
 from django.contrib.auth.models import User
 
 
@@ -104,4 +103,89 @@ class NoticeDelete(DeleteView):
 
         else:
             return HttpResponse("너는 지울 수 없다..")
+
+
+
+# =========================================FreeBoard====================================================
+
+
+def free(request):
+    free = FreeBoard.objects.all().order_by('-id')
+
+    paginator = Paginator(free , 10) #10페이지씩 자르기
+    page = request.GET.get('page')
+    posts = paginator.get_page(page) #request된 페이지를 담는다
+
+    return render(request, 'free.html' , {'frees' : free , 'free_posts' : posts})
+
+
+
+def free_detail(request, free_id):
+    free_detail = get_object_or_404(FreeBoard , pk = free_id)
+    return render(request, 'free_detail.html' ,{'free_detail' : free_detail})
+
+
+
+
+class FreePost(CreateView):
+     
+    def get(self, request, *args, **kwargs):
+        context = {'free_form': FreeForm()}
+        return render(request, 'free_post.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = FreeForm(request.POST)
+        if form.is_valid():
+            form.instance.author = self.request.user
+            form.instance.save()
+            form.save()
+            return HttpResponseRedirect(reverse_lazy('free'))
+        return render(request, 'free_post.html', {'free_form': form})
+
+
+# FreePost = FreePost.as_view()
+# FreePost_permission = login_required(FreePost)
+
+
+
+def free_edit(request, free_detail_id):
+    free_detail = get_object_or_404(FreeBoard , pk = free_detail_id)
+
+    edit_free_form = FreeForm(instance = free_detail)
+
+    if request.method == 'POST':
+        edit_free_form = FreeForm(request.POST , instance = free_detail)
+        
+        if request.user != free_detail.author:
+            return HttpResponse("땡!")
+
+        if edit_free_form.is_valid():
+            edit_free_form.save()
+            return redirect('free')
+
+
+    return render(request, 'free_edit.html', {'edit_free_form' : edit_free_form ,'free_detail' : free_detail} )
+
+
+
+class FreeDelete(DeleteView):
+
+    model = FreeBoard
+    success_url = reverse_lazy('free')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object() #이게 타이틀임
+        self.author = self.get_object().author # 작성자 name
+
+        if self.request.user == self.author:
+            
+            success_url = self.get_success_url()
+
+            self.object.delete()
+            return HttpResponseRedirect(success_url)
+
+        else:
+            return HttpResponse("너는 지울 수 없다..")
+    
+
     

@@ -25,3 +25,22 @@ class NoticeForm(forms.ModelForm):
 
 
             }
+
+
+class FreeForm(forms.ModelForm):
+    
+        
+    
+    class Meta:
+        
+        model = FreeBoard
+
+        fields = ['title','text',]
+
+        widgets = {
+                'title': forms.TextInput(
+                    attrs={'class': 'form-control', 'style': 'width: 70%', 'placeholder': '제목을 입력하세요.'}
+                ),
+                'text': forms.CharField(widget=CKEditorUploadingWidget()),
+
+            }

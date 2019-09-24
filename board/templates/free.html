@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        {# 글 작성 버튼 #}
+
+        {%if user.is_authenticated %}
+            <a href="{% url 'free_post'%}">글작성</a><br>
+        {% endif %}
+
+        
+
+
+        {# 페이지네이션을 통한 객체 불러오기 #}
+
+        {% for free in free_posts %}
+            {{free.title}}
+            
+            조회수 : {{free.hits}}
+
+        <a href="{%url 'free_detail' free.id%}">디테일들어가기</a>
+        
+        <br>
+
+        {% endfor %}
+        
+        {% if free_posts.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{free_posts.previous_page_number}}">Previous</a>
+        {% endif %}
+
+        <span>{{free_posts.number}}</span>
+        <span>of</span>
+        <span>{{free_posts.paginator.num_pages}}</span>
+
+        {% if free_posts.has_next %}
+        <a href="?page={{free_posts.next_page_number}}">Next</a>
+        <a href="?page={{free_posts.paginator.num_pages}}">Last</a>
+        {% endif %}
+        
+
+</body>
+</html>

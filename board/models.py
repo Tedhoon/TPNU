@@ -36,3 +36,20 @@ class NoticeBoard(models.Model):
 #     comment_user = models.TextField(max_length=20)
 #     comment_thumbnail_url = models.TextField(max_length=300)
 #     comment_textfield = models.TextField()
+
+class FreeBoard(models.Model):
+    
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,on_delete=models.CASCADE) # 유저 지워지면 다 지워지게
+    text = RichTextUploadingField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    hits =  models.PositiveIntegerField(default = 0) #조회수
+
+    def __str__(self):
+        return self.title
+    
+    @property
+    def update_counter(self):
+        self.hits += 1
+        self.save()
+    

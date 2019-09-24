@@ -11,7 +11,7 @@
     
     <a href="{% url 'notice' %}">공지게시판</a>
 
-    <a href="#">자유게시판</a>
+    <a href="{% url 'free' %}">자유게시판</a>
 
     <a href="#">생자대앨범</a>
 
@@ -33,6 +33,9 @@
     <a href="{% url 'login' %}">로그인</a>
     
     {%endif%}
+
+
+    <a href="{% url 'menu' %}">메뉴</a>
 
 </body>
 </html>
