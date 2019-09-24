@@ -34,7 +34,7 @@ def register(request):
 
 
 
-            mail_subject = "[TPNU] 회원가입 인증 메일입니다."
+            mail_subject = "[SPNU] 회원가입 인증 메일입니다."
 
             user_email = user.email
             email = EmailMessage(mail_subject, message, to=[user_email])

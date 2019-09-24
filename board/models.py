@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from ckeditor_uploader.fields import RichTextUploadingField
 
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 
 class NoticeBoard(models.Model):

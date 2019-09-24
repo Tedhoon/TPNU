@@ -128,7 +128,10 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'STATIC')
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'board', 'static'),
     os.path.join(BASE_DIR, 'delivery', 'static'),
+    os.path.join(BASE_DIR, 'imageboard', 'static'),
+    os.path.join(BASE_DIR, 'main', 'static'),
     os.path.join(BASE_DIR, 'user', 'static'),
 ]
 
