@@ -1,0 +1,106 @@
+body {
+    width : 100%;
+    height : 100%;
+    background-color: rgb(219, 212, 205);
+    margin : 0;
+}
+
+/* top */
+.Top {
+    width : 100%;
+    height : 80px;
+    position : fixed;
+}
+.Logo >a {
+    text-decoration : none;
+    color : black;
+}
+.Logo {
+    width : 150px;
+    height : 70%;
+    margin : 0 auto;
+    float : left;
+    font-size: 13pt;
+    text-align: left;
+    margin-left : 100px;
+    font-size : 20pt;
+    font-weight: 700;
+    padding-top : 22px;
+}
+.Bus ,.FoodMenu ,.LogInOut{
+    width : 80px;
+    height : 70%;
+    float : right;
+    text-align: right;
+    padding-top : 22px;
+    font-weight: 550;
+}
+.Bus {
+    margin-right : 50px;
+}
+.FoodMenu {
+    margin-right : 20px;
+}
+.LogInOut {
+    width : 160px;
+    margin-right : 20px;
+}
+.Bus>a ,.FoodMenu>a ,.LogInOut>a {
+    text-decoration : none;
+    color : black;
+}
+
+/* main */
+.Main {
+    position : fixed;
+    margin-top : 80px;
+    height : 520px;
+    width : 100%;
+    padding-left : 100px;
+    padding-right : 100px;
+}
+.Hello {
+    text-align: center;
+    width : 80%;
+    height : 40px;
+    margin-top : 120px;
+}
+.Icon {
+    width : 75%;
+    text-align : center;
+    margin-top : 20px;
+    height : 230px;
+    padding-left : 30px;
+
+}
+.Icons {
+    width : 100px;
+    height : 100px;
+    float : left;
+    margin-right : 30px;
+    margin-bottom : 30px;
+}
+.Icons>a {
+    text-decoration : none;
+    color : black;
+}
+.photo {
+    width : 100%;
+    height : 80%;
+    background-color : rgb(241, 175, 175);
+}
+.iconsName {
+    width : 100%;
+    height : 20%;
+    text-align : center;
+    font-size : 8pt;
+
+}
+
+.aa { 
+    border-spacing: 0; 
+    border-collapse:collapse; 
+    margin:0 auto; 
+    padding: 0;
+    text-align: center;
+}

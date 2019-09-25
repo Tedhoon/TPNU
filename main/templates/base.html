@@ -7,11 +7,10 @@
     <title>SPNU : 부산대 생명자원과학대학 커뮤니티</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/test1.css' %}">
-
 </head>
 <body>
     <header>
-        <div href = "{% url 'index' %}"><div class="Logo">SPNU</div></a>
+        <a href = "{% url 'index' %}"><div class="Logo">SPNU</div></a>
         
     {% if user.is_authenticated %}
         <div class="UserMail">{{user.email}}</div>
