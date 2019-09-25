@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SPNU : 부산대 생명자원과학대학 커뮤니티</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/test1.css' %}">
+
+</head>
+<body>
+    <header>
+        <div class="Logo">SPNU</div>
+        
+    {% if user.is_authenticated %}
+        <div class="UserMail">{{user.email}}</div>
+        <a class="UserMail" href="{% url 'logout' %}">로그아웃</a>
+    {%else%}
+        <a class="UserMail" href="{% url 'login' %}">로그인</a>
+    {%endif%}
+
+    </header>
+    <nav>
+        <div class="nav-head"></div>
+        <div class="nav-content">
+            <a href="{% url 'notice' %}"><div class="nav-icon">공지게시판</div></a>
+            <a href="{% url 'free' %}"><div class="nav-icon">자유게시판</div></a>
+            <a href="{% url 'image' %}"><div class="nav-icon">S-album</div></a>
+            <a href="{% url 'delivery' %}"><div class="nav-icon">S-배달</div></a>
+        </div>
+    </nav>
+    <div class="content">
+        
+        <div class="PageContent">
+
+            {% block contents %}
+            <!-- 내용 Input -->
+            {% endblock %}
+
+        </div>
+    </div>
+    <footer></footer>
+    
+</body>
+</html>
+

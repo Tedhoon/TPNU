@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>생자대 커뮤니티</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    
-    <a href="{% url 'notice' %}">공지게시판</a>
-
-    <a href="{% url 'free' %}">자유게시판</a>
-
-    <a href="{% url 'image' %}">생자대앨범</a>
-
-    <a href="{% url 'delivery' %}">배달</a>
-    <br><br><br>
-
-    
-    {% if user.is_authenticated %}
-
-    안녕하세요! {{user.username}}님! <br>
-    마지막 접속일 {{user.last_login}}입니다.
-
-    <a href="{% url 'logout' %}">로그아웃</a>
-
-    <a href="#">프로필</a>
-
-    {%else%}
-
-    <a href="{% url 'login' %}">로그인</a>
-    
-    {%endif%}
+{% block contents %}
+<div class="PageName">메인페이지</div>
 
 
-    <a href="{% url 'menu' %}">메뉴</a>
-
-</body>
-</html>
+{% endblock contents %}

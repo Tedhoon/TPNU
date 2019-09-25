@@ -1,14 +1,15 @@
 
-<!-- 
-{% load staticfiles %}
-<img src = "{% static 'img/개.jpg' %}"> -->
+{% extends 'base.html' %}
+{% block contents %}
+<div class="PageName">생자대배달</div>
+
 
 
 {% for delivery_list in delivery_lists %}
 
     <h1>{{delivery_list.title}}</h1><br>
     notion : {{delivery_list.notion}}<br>
-    <img src="{{delivery_list.image.url}}"><br>
+    <img width = "300px;" src="{{delivery_list.image.url}}"><br>
     menu : {{delivery_list.menu}}<br>
     description {{delivery_list.description}}<br>
 
@@ -16,3 +17,6 @@
     
 {% endfor %}
     
+
+
+{% endblock contents %}

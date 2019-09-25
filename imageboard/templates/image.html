@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block contents %}
+<div class="PageName">생자대앨범</div>
+
         {# 글 작성 버튼 #}
 
         {%if user.is_authenticated %}
@@ -32,5 +27,4 @@
         {% endfor %}
         
 
-</body>
-</html>
+{% endblock contents %}

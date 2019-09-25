@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block contents %}
+<div class="PageName">공지게시판</div>
+
+
+
         {# 글 작성 버튼 #}
 
         {%if user.is_authenticated and user.is_staff %}
@@ -42,7 +39,8 @@
         <a href="?page={{notice_posts.next_page_number}}">Next</a>
         <a href="?page={{notice_posts.paginator.num_pages}}">Last</a>
         {% endif %}
+
         
 
-</body>
-</html>
+
+{% endblock contents %}

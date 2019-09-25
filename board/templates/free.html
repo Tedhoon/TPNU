@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-        {# 글 작성 버튼 #}
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="PageName">자유게시판</div>
+
+
+
 
         {%if user.is_authenticated %}
             <a href="{% url 'free_post'%}">글작성</a><br>
@@ -42,7 +39,8 @@
         <a href="?page={{free_posts.next_page_number}}">Next</a>
         <a href="?page={{free_posts.paginator.num_pages}}">Last</a>
         {% endif %}
+
         
 
-</body>
-</html>
+
+{% endblock contents %}
