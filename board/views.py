@@ -40,7 +40,7 @@ class NoticePost(CreateView):
 
     def post(self, request, *args, **kwargs):
         if not request.user.is_staff: # staff 아닌 user는 글 못씀
-            return HttpResponse("땡!")
+            raise Http404
         form = NoticeForm(request.POST)
         if form.is_valid():
             form.instance.author = self.request.user
@@ -66,7 +66,7 @@ def notice_edit(request, notice_detail_id):
         edit_notice_form = NoticeForm(request.POST , instance = notice_detail)
         
         if request.user != notice_detail.author:
-            return HttpResponse("땡!")
+            raise Http404
 
         if edit_notice_form.is_valid():
             edit_notice_form.save()
@@ -104,7 +104,7 @@ class NoticeDelete(DeleteView):
             return HttpResponseRedirect(success_url)
 
         else:
-            return HttpResponse("너는 지울 수 없다..")
+            raise Http404
 
 
 
@@ -159,7 +159,7 @@ def free_edit(request, free_detail_id):
         edit_free_form = FreeForm(request.POST , instance = free_detail)
         
         if request.user != free_detail.author:
-            return HttpResponse("땡!")
+            raise Http404
 
         if edit_free_form.is_valid():
             edit_free_form.save()
@@ -187,7 +187,7 @@ class FreeDelete(DeleteView):
             return HttpResponseRedirect(success_url)
 
         else:
-            return HttpResponse("너는 지울 수 없다..")
+            raise Http404
     
 
     

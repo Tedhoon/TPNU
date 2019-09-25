@@ -12,6 +12,8 @@ title : {{image_detail.title}}
 <div style="display :none;">{{image_detail.update_counter}} </div>
 
 
+
+
 {% if user.is_authenticated and user.username == image_detail.author.username %}
 
     <a href="{% url 'image_edit' image_detail.id %}">수정</a>
@@ -20,5 +22,4 @@ title : {{image_detail.title}}
 {% endif %}
 
 
-
-     
+<p>Likes : {{ image_detail.likes.count }}</p>

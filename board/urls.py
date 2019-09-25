@@ -19,7 +19,6 @@ urlpatterns = [
     # path('ckeditor/', include('ckeditor_uploader.urls')),
     # =====================================================================
 
-
     # ===============================ckeditor==============================
     path('upload/', login_required(views_ckeditor.upload), name='ckeditor_upload'),
     path('browse/', never_cache(login_required(views_ckeditor.browse)), name='ckeditor_browse'),
