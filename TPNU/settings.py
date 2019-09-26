@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=05ci$q@zl%qc0^000-v#hh^a-)!i6#6m=o7f8+!qyi8fal^8@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -123,10 +123,12 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-
-STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, '.static_root')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'STATIC')
+
+STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'board', 'static'),
     os.path.join(BASE_DIR, 'delivery', 'static'),
@@ -134,7 +136,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'main', 'static'),
     os.path.join(BASE_DIR, 'user', 'static'),
 ]
-
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    # 'django.contrib.staticfiles.finders.AppDirectoriesFinder',    #causes verbose duplicate notifications in django 1.9
+)
 # Media files 
 
 MEDIA_URL = '/media/'
