@@ -1,5 +1,5 @@
 body {
-    background-color : white;
+    background-color : green;
     margin : 0;
 }
 header {
@@ -94,6 +94,7 @@ nav {
     height : 355px;
     padding-right : 100px;
 }
+
 footer {
     width : 100%;
     height : 35px;
@@ -102,6 +103,20 @@ footer {
     bottom : 0px;
     margin-left : 200px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* phone */
 @media (max-width : 320px) {

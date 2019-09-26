@@ -1,46 +1,57 @@
 {% extends 'base.html' %}
 {% block contents %}
+
 <div class="PageName">공지게시판</div>
 
+<div class="board-content">
+    <table>
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        {% for notice in notice_posts %}
+        <tbody>
+        <tr>
+            <td class="table-number">{{notice.id}}</td>
+            <td class="table-title"><a href="{%url 'notice_detail' notice.id%}">{{notice.title}}</a></td>
+            <td class="table-author">{{notice.author}}</td>
+            <td class="table-date">{{notice.created_date}}</td>
+            <td class="table-hits">{{notice.hits}}</td>
+        </tr>    
+        </tbody>
+        {% endfor %}
+    </table>
 
-
+    <div class="textWrite-button">
         {# 글 작성 버튼 #}
-
         {%if user.is_authenticated and user.is_staff %}
             <a href="{% url 'notice_post'%}">글작성</a><br>
-        {% endif %}
+        {% endif %}        
+    </div>
 
-        
-
-
+    <div class="Pagenation">
         {# 페이지네이션을 통한 객체 불러오기 #}
-
-        {% for notice in notice_posts %}
-            {{notice.title}}
-            
-            조회수 : {{notice.hits}}
-
-        <a href="{%url 'notice_detail' notice.id%}">디테일들어가기</a>
-        
-        <br>
-
-        {% endfor %}
-        
+        <br> 
         {% if notice_posts.has_previous %}
             <a href="?page=1">First</a>
             <a href="?page={{notice_posts.previous_page_number}}">Previous</a>
         {% endif %}
-
-        <span>{{notice_posts.number}}</span>
-        <span>of</span>
-        <span>{{notice_posts.paginator.num_pages}}</span>
-
+    
+            <span>{{notice_posts.number}}</span>
+            <span>of</span>
+            <span>{{notice_posts.paginator.num_pages}}</span>
+    
         {% if notice_posts.has_next %}
-        <a href="?page={{notice_posts.next_page_number}}">Next</a>
-        <a href="?page={{notice_posts.paginator.num_pages}}">Last</a>
+            <a href="?page={{notice_posts.next_page_number}}">Next</a>
+            <a href="?page={{notice_posts.paginator.num_pages}}">Last</a>
         {% endif %}
+    </div>
 
-        
-
-
+</div>
+ 
 {% endblock contents %}
