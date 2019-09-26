@@ -1,5 +1,5 @@
 body {
-    background-color : green;
+    background-color : white;
     margin : 0;
 }
 header {
@@ -13,11 +13,13 @@ header {
     height : 35px;
     margin : 0 auto;
     float : left;
-    margin-left : 50px;
-    padding-top : 9px;
+    margin-left : 60px;
+    padding-top : 5px;
     position : fixed;
     z-index: 2;
-    font-size : 13pt;
+    font-size : 20pt;
+    font-weight: 600;
+    color : black;
 }
 .UserMail {
     width : 200px;
@@ -33,7 +35,7 @@ header {
 nav {
     width : 200px;
     height : 100%;
-    background-color : rgb(10, 51, 6);
+    background-color : rgb(100,90,70);
     position : fixed;
     top : 0px;
     left : 0px;
@@ -55,6 +57,9 @@ nav {
     left : 0;
     padding-top : 30px;
 }
+.nav>a , .Logo>a, header>a {
+    text-decoration: none;
+}
 .nav-icon {
     width : 90%;
     height : 40px;
@@ -67,25 +72,25 @@ nav {
 }
 /* content가 아래있는 레이어 */
 .content {
-    width : 80%;
+    width : 70%;
     height : 100%;
     position : fixed;
     top : 35px;
     margin-right : 100px;
     margin-left : 200px;
-    margin-top : 40px;
+    margin-top : 10px;
     margin-bottom : 40px;
     padding-left : 50px;
     padding-bottom : 50px;
 
 }
 .PageName {
-    width : 90px;
+    width : 120px;
     margin-top : 0;
     height : 28px;
-    border-bottom : 3px solid rgb(10, 51, 6);
+    border-left : 5px solid rgb(170,165,125);
     padding-left : 10px;
-    font-size : 12pt;
+    font-size : 15pt;
     font-weight: 800;
 }
 .PageContent {
@@ -94,7 +99,6 @@ nav {
     height : 355px;
     padding-right : 100px;
 }
-
 footer {
     width : 100%;
     height : 35px;
@@ -105,16 +109,66 @@ footer {
 }
 
 
+/* notice.css내용 */
+.board-content {
+    width : 100%;
+    height : 100%;
+    /* background-color : red; */
+    padding-top : 20px;
+}
 
+/* table */
+table {
+    width : 100%;
+    height : 100%;
+    border-collapse : collapse;
 
+}
+thead {
+    border-top : 2px solid black;
+    border-bottom : 1px solid gray;
 
+}
+tr, th, td {
+    text-align : center;
+    padding-left : 10px;
+}
+th {
+    padding-top : 15px;
+    padding-bottom: 15px;
+    font-size : 12pt;
+}
+td {
+    padding-top : 5px;
+    padding-bottom : 5px;
+    font-size : 11pt;
+}
+.table-title>a {
+    text-decoration : none; 
+    color : black;
+}
+.table-number {
+    color : rgb(51, 50, 50);
 
+}
+.table-title {
+    font-weight: 500;
+    padding : 0 130px;
+    text-align : left !important;
+}
+.table-author {
+    color : rgb(51, 50, 50);
+    padding-left : 0 70px;
+}
+.table-date {
+    color :rgb(70, 69, 69);
+    font-size : 9pt;
+}
+.table-hits {
+    color : rgb(100,90,70);
+}
 
-
-
-
-
-
+/* 페이지네이션 */
 
 
 
