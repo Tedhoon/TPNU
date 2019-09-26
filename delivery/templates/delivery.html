@@ -1,22 +1,26 @@
-
 {% extends 'base.html' %}
 {% block contents %}
 <div class="PageName">생자대배달</div>
 
 
+<div class="DeliveryList">
+    <div class="caraselbutton_left"></div>
+    <div class="deliveryContent">
 
-{% for delivery_list in delivery_lists %}
+        {% for delivery_list in delivery_lists %}
+        <div class="deliveryContents">
+            <a href="{% url 'delivery_list' delivery_list.id %}">
 
-    <h1>{{delivery_list.title}}</h1><br>
-    notion : {{delivery_list.notion}}<br>
-    <img width = "300px;" src="{{delivery_list.image.url}}"><br>
-    menu : {{delivery_list.menu}}<br>
-    description {{delivery_list.description}}<br>
+            <img width = "300px;" src="{{delivery_list.image.url}}"><br>
+            <div class="delivery-title">{{delivery_list.title}}</div>
 
-    <a href="{% url 'delivery_list' delivery_list.id %}">디테일 페이지</a>
-    
-{% endfor %}
-    
+            </a>
+        </div>
+        {% endfor %}
 
+    </div>
+    <div class="caraselbutton-right"></div>
+
+</div>
 
 {% endblock contents %}
