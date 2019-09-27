@@ -15,12 +15,12 @@ class NoticeForm(forms.ModelForm):
 
         widgets = {
                 'title': forms.TextInput(
-                    attrs={'class': 'form-control', 'style': 'width: 70%', 'placeholder': '제목을 입력하세요.'}
+                    attrs={'class': 'form-control', 'style': 'width: 66%', 'placeholder': '제목을 입력하세요.'}
                 ),
                 # 'author': forms.Select(
                 #     attrs={'class': 'custom-select'},
                 # ),
-                'text': forms.CharField(widget=CKEditorUploadingWidget()),
+                'text' : forms.CharField(widget=CKEditorUploadingWidget()),
 
 
 
@@ -39,7 +39,7 @@ class FreeForm(forms.ModelForm):
 
         widgets = {
                 'title': forms.TextInput(
-                    attrs={'class': 'form-control', 'style': 'width: 70%', 'placeholder': '제목을 입력하세요.'}
+                    attrs={'class': 'form-control', 'style': 'width: 66%', 'placeholder': '제목을 입력하세요.'}
                 ),
                 'text': forms.CharField(widget=CKEditorUploadingWidget()),
 
