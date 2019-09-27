@@ -3,24 +3,116 @@
 <div class="PageName">생자대배달</div>
 
 
-<div class="DeliveryList">
-    <div class="caraselbutton_left"></div>
-    <div class="deliveryContent">
+<div class="photo-content">
 
+        
         {% for delivery_list in delivery_lists %}
+        <div id="{{forloop.counter}}" class ="hello" >
         <div class="deliveryContents">
-            <a href="{% url 'delivery_list' delivery_list.id %}">
 
-            <img width = "300px;" src="{{delivery_list.image.url}}"><br>
-            <div class="delivery-title">{{delivery_list.title}}</div>
+            
+            
+            <!-- <a href="{% url 'delivery_list' delivery_list.id %}"> -->
+                <div class="photoSpace">
+                    <img class="delivery-photo" width = "300px;" src="{{delivery_list.image.url}}"><br>
+                </div>
+                <div class="delivery-text">
+                    <div class="delivery-title">{{delivery_list.title}}</div>
+                    <div class="delivery-price">배달료 : 6000원</div>
+                </div>
+            <!-- </a> -->
+            </div>
+            
 
-            </a>
+            <!-- The Modal -->
+            <div id="{{forloop.counter}}hello" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    {{delivery_list.title}}<br>
+                    {{delivery_list.description}}<br>
+                    {{delivery_list.menu}}<br>
+                    {{delivery_list.notion}}<br>
+
+                </div>
+
+            </div>
+
         </div>
         {% endfor %}
-
-    </div>
-    <div class="caraselbutton-right"></div>
+        
 
 </div>
+
+<script>
+    window.onload = function(){
+        
+        for(let i=1; i<50; i++) {
+            
+        console.log(i)
+        console.log(btn)
+        console.log(modal)
+
+
+        var btn = document.getElementById(i);
+        var modal = document.getElementById(i+"hello");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function(e){
+            modal.style.display = "block";
+        };
+
+
+        span.onclick = function(){
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    }
+    };
+</script>
+<style>
+    /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */                          
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
 
 {% endblock contents %}

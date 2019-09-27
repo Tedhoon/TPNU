@@ -7,6 +7,11 @@ header {
     height : 35px;
     background-color : white;
     border-bottom: 1px rgb(192, 192, 192) solid;
+    position : fixed;
+    top : 0;
+    z-index: 3;
+    padding-top : 15px;
+    padding-bottom : 5px;
 }
 .Logo {
     width : 150px;
@@ -14,7 +19,8 @@ header {
     margin : 0 auto;
     float : left;
     margin-left : 60px;
-    padding-top : 5px;
+    padding-top : 0px;
+    padding-bottom : 2px;
     position : fixed;
     z-index: 2;
     font-size : 20pt;
@@ -45,7 +51,7 @@ nav {
 }
 .nav-head {
     width : 100%;
-    height : 35px;
+    height : 40px;
     background-color : white;
     top : 0;
     left : 0;
@@ -55,7 +61,7 @@ nav {
     height : 100%;
     top : 35px;
     left : 0;
-    padding-top : 30px;
+    padding-top : 45px;
 }
 .nav>a , .Logo>a, header>a {
     text-decoration: none;
@@ -74,7 +80,7 @@ nav {
 .content {
     width : 70%;
     height : 100%;
-    position : fixed;
+    /* position : fixed; */
     top : 35px;
     margin-right : 100px;
     margin-left : 200px;
@@ -85,8 +91,9 @@ nav {
 
 }
 .PageName {
+
     width : 120px;
-    margin-top : 0;
+    margin-top : 100px !important ;
     height : 28px;
     border-left : 5px solid rgb(170,165,125);
     padding-left : 10px;
@@ -110,7 +117,7 @@ footer {
 
 
 /* notice.css내용 */
-.board-content {
+.board-content{
     width : 100%;
     height : 100%;
     /* background-color : red; */
@@ -170,6 +177,57 @@ td {
 }
 
 /* 페이지네이션 */
+
+
+
+/* 생자대 배달 */
+.photo-content {
+    width : 100%;
+    height : 530px;
+    /* background-color : red; */
+    padding-top : 40px;
+    /* display: flex; */
+}
+
+.deliveryContents {
+    /* background-color: gray; */
+    width : 220px;
+    height : 270px;
+    display : block;
+    float : left;
+    margin-right : 45px;
+    margin-bottom: 80px;
+}
+.deliveryContents>a {
+    text-decoration : none;
+    color : black;
+}
+.photoSpace {
+    background-color : rgb(185, 185, 185);
+    width : 100%;
+    height : 220px;
+    
+}
+.delivery-photo {
+    /* background-color : blue; */
+    width : 100%;
+    height : auto;
+    
+}
+.delivery-text {
+    width : 100%;
+    padding-top : 12px;
+
+}
+.delivery-title {
+    font-size : 11pt;
+    font-weight: 700;
+}
+.delivery-price {
+    font-size : 10pt;
+    font-weight: 400;
+    color : rgb(100, 100, 100);
+}
 
 
 
