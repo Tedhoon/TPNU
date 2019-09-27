@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>생자대 커뮤니티</title>
+
 </head>
 <body>
     <div class="Top">
@@ -28,16 +29,16 @@
 
     <div class="Main">
         <div class="Hello">
-            유저 : {{user.username}} <br>
+            <!-- 유저 : {{user.username}} <br>
             이메일 : {{user.email}}
-        </div>
+        </div> -->
         <div class="Icon">
             <table class="aa">
                 <tr>
                     <th>
                         <div class="Icons">
                             <a href="{% url 'notice' %}">
-                                <div class="photo"><img src=""></div>
+                                <div class="photo"><img id="animal1" src="{% static 'img/cat.png'%}"></div>
                                 <div class="iconsName">공지게시판</div>
                             </a>
                         </div>
@@ -45,7 +46,7 @@
                     <th>
                         <div class="Icons">
                             <a href="{% url 'free' %}">
-                                <div class="photo"><img src=""></div>
+                                <div class="photo"><img id="animal2" src="{% static 'img/rabbit.png'%}"></div>
                                 <div class="iconsName">자유게시판</div>
                             </a>
                         </div>
@@ -53,7 +54,7 @@
                     <th>
                         <div class="Icons">
                             <a href="{% url 'image' %}">
-                                <div class="photo"><img src=""></div>
+                                <div class="photo"><img id="animal3" src="{% static 'img/bear.png'%}"></div>
                                 <div class="iconsName">생자대생활</div>
                             </a>
                         </div>
@@ -63,7 +64,7 @@
                     <td>
                         <div class="Icons">
                             <a href="{% url 'delivery' %}">
-                                <div class="photo"><img src=""></div>
+                                <div class="photo"><img id="animal4" src="{% static 'img/giraffe.png'%}"></div>
                                 <div class="iconsName">생자대배달</div>
                             </a>
                         </div>
@@ -71,7 +72,7 @@
                     <td>
                         <div class="Icons">
                             <a href="">
-                                <div class="photo"><img src=""></div>
+                                <div class="photo"><img id="animal5" src="{% static 'img/squirrel.png'%}"></div>
                                 <div class="iconsName">홍보게시판</div>
                             </a>
                         </div>
@@ -79,7 +80,7 @@
                     <td>
                         <div class="Icons">
                             <a href="">
-                                <div class="photo"><img src=""></div>
+                                <div class="photo"><img id="animal6" src="{% static 'img/elephant.png'%}"></div>
                                 <div class="iconsName">분실물</div>
                             </a>
                         </div>
