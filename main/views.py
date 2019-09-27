@@ -23,4 +23,7 @@ def menu(request):
     #     menu_list = div.text
 
 
-    return render(request, 'menu.html' , {'menu_lists':menu_list})
+    return render(request, 'menu.html')
+
+def bus(request):
+    return render(request, 'bus.html')

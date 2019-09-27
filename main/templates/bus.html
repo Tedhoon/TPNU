@@ -44,12 +44,7 @@ window.onload = function(){
     
     </script>
     <style>
-        body{
-            background-color : rgb(100,90,70);
-        }
-        img{
-            border-radius: 10px;
-        }
+        
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -67,6 +62,7 @@ window.onload = function(){
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto; /* 15% from the top and centered */
+
             padding: 20px;
             border: 1px solid #888;
             width: 50%; /* Could be more or less, depending on screen size */                          
@@ -86,16 +82,20 @@ window.onload = function(){
         }
 
         #myBtn {
-            float:left;
+
             margin: 20px;
             
         }
         .content_menu{
             text-align: center;
-            margin-left: 40%;
-            margin-top : 20%;
+
+            margin-top : 15%;
         }
-    
+        
+        img{
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
     
     </style>
     
@@ -105,11 +105,11 @@ window.onload = function(){
 <div class ="content_menu">
     <!-- The Modal -->
     <div id="myBtn">
-            <img width = "100px;" src = "{% static 'img/dorm.jpg' %}">
+            <img width = "100px;" src = "{% static 'img/bus.png' %}">
     </div>
-
+    <img width = "500px;" src = "{% static 'img/way_to_campus.jpg' %}">
     <div id="myBtn">
-            <img width = "100px;" src = "{% static 'img/dorm2.jpg' %}">
+            <img width = "100px;" src = "{% static 'img/bus.png' %}">
     </div>
 </div>
 
@@ -120,7 +120,7 @@ window.onload = function(){
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>                                                               
-        <img width = "850px;" src = "{% static 'img/menu_test1.jpg' %}">
+        <img width = "840px;" src = "{% static 'img/buss.gif' %}">
       </div>
  
     </div>
