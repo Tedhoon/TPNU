@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block contents %}
-<div class="PageName">생자대배달</div>
+{% load staticfiles %}
 
+<div class="PageName">생자대배달</div>
 
 <div class="photo-content">
 
@@ -14,7 +15,7 @@
             
             <!-- <a href="{% url 'delivery_list' delivery_list.id %}"> -->
                 <div class="photoSpace">
-                    <img class="delivery-photo" width = "300px;" src="{{delivery_list.image.url}}"><br>
+                    <img class="delivery-photo" width = "300px" src="{{delivery_list.image.url}}"><br>
                 </div>
                 <div class="delivery-text">
                     <div class="delivery-title">{{delivery_list.title}}</div>

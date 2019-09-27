@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block contents %}
+{% load staticfiles %}
 
-<div class="PageName">공지게시판</div>
+
+<div class="PageName">
+    공지게시판
+    {%if user.is_authenticated and user.is_staff %}
+    <a href="{% url 'notice_post'%}"><img class="plusbtn" src="{% static 'img/add.png'%}"></a>
+    {% endif %}
+    
+
+</div>
 
 <div class="board-content">
     <table>
@@ -26,13 +35,6 @@
         </tbody>
         {% endfor %}
     </table>
-
-    <div class="textWrite-button">
-        {# 글 작성 버튼 #}
-        {%if user.is_authenticated and user.is_staff %}
-            <a href="{% url 'notice_post'%}">글작성</a><br>
-        {% endif %}        
-    </div>
 
     <div class="Pagenation">
         {# 페이지네이션을 통한 객체 불러오기 #}

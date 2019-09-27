@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<div class="PageName">자유게시판</div>
+{% load staticfiles %}
+
+<div class="PageName">
+    자유게시판
+        {%if user.is_authenticated %}
+        <a href="{% url 'free_post'%}"><img class="plusbtn" src="{% static 'img/add.png'%}"></a>
+        {% endif %}
+</div>
+
 
 <div class="board-content">
     <table>
@@ -28,14 +36,6 @@
         {% endfor %}
 
     </table>
-
-
-    
-    <div class="textWrite-button">
-        {%if user.is_authenticated %}
-        <a href="{% url 'free_post'%}">글작성</a><br>
-        {% endif %}  
-    </div>
 
     
     <div class="Pagenation">
