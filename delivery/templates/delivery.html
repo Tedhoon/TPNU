@@ -35,6 +35,7 @@
                     {{delivery_list.description}}<br>
                     {{delivery_list.menu}}<br>
                     {{delivery_list.notion}}<br>
+                    <img src= "{{delivery_list.image.url}}" width="300px;">
 
                 </div>
 
@@ -47,35 +48,62 @@
 </div>
 
 <script>
+
+    let span1;
+        
+        
     window.onload = function(){
         
-        for(let i=1; i<50; i++) {
+
+        const num = document.getElementsByClassName("hello").length;
+        
+
+        for(let i=1; i<=num; i++) {
             
-        console.log(i)
-        console.log(btn)
-        console.log(modal)
 
 
-        var btn = document.getElementById(i);
-        var modal = document.getElementById(i+"hello");
-        var span = document.getElementsByClassName("close")[0];
+            let btn = document.getElementById(i);
+            let modal = document.getElementById(i+"hello");
+            let span = document.getElementsByClassName("close")[0];
 
-        btn.onclick = function(e){
-            modal.style.display = "block";
-        };
+            
+            
+            span1 = span;
+            
+            btn.onclick = function(){
+                modal.style.display = "block";
+            };
 
 
-        span.onclick = function(){
-            modal.style.display = "none";
-        };
+    };    
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        };
-    }
+
+    span1.onclick = function(){
+            
+        for(i=1; i<num; i++){
+            
+            let modal1 = document.getElementById(i+"hello");
+            
+            console.log(modal1)
+            modal1.style.display = "none";   
+        }
     };
+
+    window.onclick = function(event) {
+
+        for(i=1; i<num+1; i++){
+            let modal1 = document.getElementById(i+"hello");
+            
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+
+    };
+        
+    };
+
+
 </script>
 <style>
     /* The Modal (background) */
