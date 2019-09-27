@@ -382,6 +382,90 @@ td {
 
 }
 
+/* 앨범 디테일페이지 */
+.albumBox {
+    width : 60%;
+    height : 500px;
+    /* background-color : red; */
+    margin-left : 180px;
+    position : fixed;
+    border : 1px solid gray;
+    border-radius: 2rem;
+}
+.albumPhoto {
+    width :450px;
+    height : 480px;
+    /* background-color : yellow; */
+    position : fixed;
+    margin-top : 30px;
+    float : left;
+    text-align: center;
+
+}
+.albumContents {
+    width : 450px;
+    height : 480px;
+    /* background-color : orange; */
+    position : fixed;
+    margin-top : 30px;
+    float : right;
+    margin-left : 460px;
+    padding-left : 20px;
+
+}
+.album-title {
+    font-size : 20pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 600;
+    margin-top : 20px;
+    margin-bottom : 10px;
+    
+}
+.album-author {
+    font-size : 11pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 500;
+}
+.album-created_date {
+    font-size : 11pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 400;
+    color : gray;
+}
+.album-desc {
+    margin-top : 10px;
+    font-size : 10pt;
+    /* background-color : pink; */
+    width : 100%;
+    height : 250px;
+    font-weight: 400;
+}
+.album-likes {
+    margin-top : 10px;
+    font-size : 12pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 600;
+    color : rgb(170,165,125);
+}
+
+.albumHeart {
+    width : 100%;
+    margin-right : 3px;
+}
+.album-likescount {
+    width : 100%;
+    margin-left : 3px;
+}
+.album-modify_delete>a {
+    text-decoration: none;
+    color : black;
+    margin-top : 10px;
+}
+
 
 
 /* phone */
