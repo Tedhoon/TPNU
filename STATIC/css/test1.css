@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 body {
+    font-family: 'Noto Sans KR', sans-serif;
     background-color : white;
     margin : 0;
+    
 }
 header {
     width : 100%;
@@ -307,6 +310,160 @@ td {
     font-weight: 600;
     /* background-color : pink; */
     float: right;
+}
+
+/* detail page */
+.DetailContents {
+    width : 100%;
+    height : 700px;
+    /* background-color : yellow; */
+    margin-top : 130px;
+    margin-left : 30px;
+}
+.Flower {
+    float : left;
+    
+}
+.Writer {
+    width : 100%;
+    height : 100px;
+    /* background-color : red; */
+    /* border-bottom : gray 1px solid; */
+}
+
+.writerName {
+    width : 50%;
+    /* background-color : orange; */
+    float : left;
+    margin-left : 15px;
+    margin-top : 20px;
+    font-size : 13pt;
+}
+.writeTime {
+    width : 50%;
+    /* background-color : green; */
+    float : left;
+    margin-left : 15px;
+    margin-top : 5px;
+    font-size : 10pt;
+    color : gray;
+}
+.ModifyRemove {
+    width : 20%;
+    float : right;
+    /* background-color : blue; */
+    font-size : 11pt;
+    
+    
+}
+.ModifyRemove >a {
+    text-decoration : none;
+    color : rgb(124, 124, 124);
+}
+
+.board-Text {
+    /* background-color : red; */
+    width : 100%;
+    margin-left : 90px;
+}
+
+.board-title {
+    width : 100%;
+    height : 60px;
+    /* background-color : purple; */
+    font-size : 20pt;
+    font-weight: 800; 
+}
+.board-content {
+    width : 100%;
+    height : 80%;
+    /* background-color : pink; */
+    font-size : 15pt;
+
+}
+
+/* 앨범 디테일페이지 */
+.albumBox {
+    width : 60%;
+    height : 500px;
+    /* background-color : red; */
+    margin-left : 180px;
+    position : fixed;
+    border : 1px solid gray;
+    border-radius: 2rem;
+}
+.albumPhoto {
+    width :450px;
+    height : 480px;
+    /* background-color : yellow; */
+    position : fixed;
+    margin-top : 30px;
+    float : left;
+    text-align: center;
+
+}
+.albumContents {
+    width : 450px;
+    height : 480px;
+    /* background-color : orange; */
+    position : fixed;
+    margin-top : 30px;
+    float : right;
+    margin-left : 460px;
+    padding-left : 20px;
+
+}
+.album-title {
+    font-size : 20pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 600;
+    margin-top : 20px;
+    margin-bottom : 10px;
+    
+}
+.album-author {
+    font-size : 11pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 500;
+}
+.album-created_date {
+    font-size : 11pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 400;
+    color : gray;
+}
+.album-desc {
+    margin-top : 10px;
+    font-size : 10pt;
+    /* background-color : pink; */
+    width : 100%;
+    height : 250px;
+    font-weight: 400;
+}
+.album-likes {
+    margin-top : 10px;
+    font-size : 12pt;
+    /* background-color : pink; */
+    width : 100%;
+    font-weight: 600;
+    color : rgb(170,165,125);
+}
+
+.albumHeart {
+    width : 100%;
+    margin-right : 3px;
+}
+.album-likescount {
+    width : 100%;
+    margin-left : 3px;
+}
+.album-modify_delete>a {
+    text-decoration: none;
+    color : black;
+    margin-top : 10px;
 }
 
 

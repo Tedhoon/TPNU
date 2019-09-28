@@ -12,8 +12,8 @@
 <body>
     <div class="Top">
         <div class="Logo"><a href="">SPNU</a></div>
-        <div class="Bus"><a href="{% url 'bus' %}">버스</a></div>
-        <div class="FoodMenu"><a href="{% url 'menu' %}">식단</a></div>
+        <!-- <div class="Bus"><a href="{% url 'bus' %}"><img src="{%static 'img/mainBus.png'%}"></a></div>
+        <div class="FoodMenu"><a href="{% url 'menu' %}"><img src="{%static 'img/mainRice.png'%}"></a></div> -->
         <div class="LogInOut">    
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}">로그아웃</a>
@@ -29,9 +29,13 @@
 
     <div class="Main">
         <div class="Hello">
-            <!-- 유저 : {{user.username}} <br>
-            이메일 : {{user.email}}
-        </div> -->
+            <div class="busriceImg-container">
+                <div class="Bus"><a href="{% url 'bus' %}"><img src="{%static 'img/mainBus.png'%}"></a></div>
+                <div class="FoodMenu"><a href="{% url 'menu' %}"><img src="{%static 'img/mainRice.png'%}"></a></div>
+                <!-- 유저 : {{user.username}} <br>
+                이메일 : {{user.email}} -->
+            </div>
+        </div>
         <div class="Icon">
             <table class="aa">
                 <tr>
