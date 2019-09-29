@@ -27,7 +27,7 @@
         <tbody>
         <tr>
             <td class="table-number">{{notice.id}}</td>
-            <td class="table-title"><a href="{%url 'notice_detail' notice.id%}">{{notice.title}}</a></td>
+            <td class="table-title"><a href="{%url 'notice_detail' notice.id%}">{{notice.title|safe}}</a></td>
             <td class="table-author">{{notice.author}}</td>
             <td class="table-date">{{notice.created_date}}</td>
             <td class="table-hits">{{notice.hits}}</td>
