@@ -10,7 +10,7 @@ class NoticeBoard(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,on_delete=models.CASCADE) # 유저 지워지면 다 지워지게
     text = RichTextUploadingField()
-    created_date = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateField(auto_now_add=True)
     hits =  models.PositiveIntegerField(default = 0) #조회수
 
     def __str__(self):
@@ -42,7 +42,7 @@ class FreeBoard(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,on_delete=models.CASCADE) # 유저 지워지면 다 지워지게
     text = RichTextUploadingField()
-    created_date = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateField(auto_now_add=True)
     hits =  models.PositiveIntegerField(default = 0) #조회수
 
     def __str__(self):

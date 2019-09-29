@@ -11,7 +11,7 @@ class ImageBoard(models.Model):
     # slug = models.SlugField(unique=True , blank =True)
     image = models.ImageField(upload_to='imageboard/')
     desc = models.TextField(blank=True)
-    created_date = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateField(auto_now_add=True)
     hits =  models.PositiveIntegerField(default = 0) #조회수
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True ,related_name='post_likes')
     
