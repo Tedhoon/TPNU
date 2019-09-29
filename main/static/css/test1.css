@@ -8,7 +8,7 @@ body {
     
 }
 header {
-    width : 100%;
+    width : 98%;
     height : 35px;
     background-color : white;
     border-bottom: 1px rgb(192, 192, 192) solid;
@@ -148,6 +148,7 @@ nav {
     margin-top : 40px;
     height : 330px;
     padding-right : 100px;
+    /* background-color : skyblue; */
 }
 footer {
     width : 100%;
@@ -354,37 +355,44 @@ td {
 }
 .Flower {
     float : left;
+    width : 80px;
+    /* background-color: red; */
     
 }
+
 .Writer {
-    width : 100%;
+    width : 80%;
     height : 100px;
-    /* background-color : red; */
+    margin-left : 90px;
+    /* background-color : orange; */
     /* border-bottom : gray 1px solid; */
 }
 
 .writerName {
-    width : 50%;
-    /* background-color : orange; */
+    width : 100%;
+    /* background-color : green; */
     float : left;
-    margin-left : 15px;
+    /* margin-left : 15px; */
     margin-top : 20px;
+    margin-bottom : 5px;
     font-size : 13pt;
 }
 .writeTime {
     width : 50%;
     /* background-color : green; */
     float : left;
-    margin-left : 15px;
-    margin-top : 5px;
+    /* margin-left : 15px; */
+    /* margin-top : 5px; */
     font-size : 10pt;
     color : gray;
+    /* background-color : red; */
 }
 .ModifyRemove {
-    width : 20%;
+    width : 30%;
     float : right;
     /* background-color : blue; */
     font-size : 11pt;
+    text-align : right;
     
     
 }
@@ -395,7 +403,7 @@ td {
 
 .board-Text {
     /* background-color : red; */
-    width : 100%;
+    width : 80%;
     margin-left : 90px;
 }
 
@@ -410,7 +418,7 @@ td {
     width : 100%;
     height : 80%;
     /* background-color : pink; */
-    font-size : 15pt;
+    font-size : 12pt;
 
 }
 
@@ -501,16 +509,42 @@ td {
 
 
 /* phone */
-@media (max-width : 320px) {
+@media (max-width : 380px) {
 
-}
-/* tablets */
-
-@media (max-width : 991px) {
 
 }
 
-@media (max-width : 767px) {
+
+@media (max-width : 430px) {
+    .content {
+        width : 100%;
+        height : 100%;
+        margin : 0 auto;
+        padding : 0;
+        /* background-color :pink; */
+    
+    }
+    .PageContent {
+        padding : 0;
+    }
+    .UserMail {
+        display : none;
+    }
+    .board-title {
+        font-size : 17pt;
+        /* background-color : blue; */
+        padding: 0;
+
+    }
+    .board-content {
+        font-size : 11pt;
+        /* background-color : red; */
+        padding-top : 0;
+        margin-top : 0;
+    }
+    .board-Text {
+        /* background-color : pink; */
+    }
 
 }
 @media (max-width : 769px) {
@@ -520,18 +554,7 @@ td {
     .Logo {
         display : none;
     }
-    .content {
-        width : 70%;
-        height : 100%;
-        /* position : fixed; */
-        top : 35px;
-        margin : 0 auto;
-        margin-top : 10px;
-        margin-bottom : 40px;
-        padding-left : 50px;
-        padding-bottom : 50px;
-    
-    }
+
     .Nav-line3-container {
         display: block;
         width : 30px;
@@ -556,4 +579,36 @@ td {
     .Login-In, .Login-Out {
         margin-right : 30px;
     }
+
+    /* 게시판 디테일페이지 */
+    .content {
+        width : 70%;
+        height : 100%;
+        margin : 0 auto;
+        padding : 0;
+        /* background-color :pink; */
+    
+    }
+    .DetailContents {
+        /* background-color : purple; */
+        width : 100%;
+        margin : 0 auto;
+    }
+    .Writer {
+        width : 100%;
+        height : 100px;
+        margin : 0;
+        float : left;
+        /* background-color : orange; */
+        padding-top : 80px;
+        /* border-bottom : gray 1px solid; */
+    }
+    .board-Text {
+        /* background-color : red; */
+        width : 100%;
+        margin : 0;
+        float : left;
+        padding-bottom : 80px;
+    }
+    
 }
