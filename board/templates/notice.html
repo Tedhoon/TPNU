@@ -20,34 +20,25 @@
         {% for notice in notice_posts %}
         <tbody>
         <tr>
-<<<<<<< HEAD
             <td class="table-number">{{notice.id}}</td>
             <td class="table-title"><a href="{%url 'notice_detail' notice.id%}">{{notice.title|safe}}</a></td>
             <td class="table-author">{{notice.author}}</td>
             <td class="table-date">{{notice.created_date}}</td>
             <td class="table-hits">{{notice.hits}}</td>
-=======
-            <div class="tdContainer">
-                <td class="table-number">{{notice.id}}</td>
-                <td class="table-title"><a href="{%url 'notice_detail' notice.id%}">{{notice.title}}</a></td>
-                <td class="table-author">{{notice.author}}</td>
-                <td class="table-date">{{notice.created_date}}</td>
-                <td class="table-hits">{{notice.hits}}</td>
-            </div>
->>>>>>> 7cfe88d440d34381ccac118b65bf5c231773a8df
         </tr>    
         </tbody>
         {% endfor %}
     </table>
-    <div class="TextPlusBtn">
+    
         {%if user.is_authenticated and user.is_staff %}
+        <div class="TextPlusBtn">
         <a href="{% url 'notice_post'%}">글작성
             
         <!-- <img class="plusbtn" src="{% static 'img/add.png'%}"> -->
         </a>
-        
+        </div>
         {% endif %}
-    </div>
+    
 
     <div class="Pagenation">
         {# 페이지네이션을 통한 객체 불러오기 #}
