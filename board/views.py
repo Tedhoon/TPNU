@@ -4,7 +4,9 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 # pagination
 from django.core.paginator import Paginator
-from django.views.generic.edit import CreateView , DeleteView 
+from django.views.generic.edit import CreateView , DeleteView
+# from django.views.generic import DetailView
+from hitcount.views import HitCountDetailView
 
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.urls import reverse_lazy
@@ -25,10 +27,11 @@ def notice(request):
 
 
 
-def notice_detail(request, notice_id):
-    notice_detail = get_object_or_404(NoticeBoard , pk = notice_id)
-    return render(request, 'notice_detail.html' ,{'notice_detail' : notice_detail})
-
+class NoticeDetail(HitCountDetailView):
+    model = NoticeBoard
+    template_name = 'notice_detail.html'
+    context_object_name = 'notice_detail'
+    count_hit = True
 
 
 
@@ -122,10 +125,11 @@ def free(request):
 
 
 
-def free_detail(request, free_id):
-    free_detail = get_object_or_404(FreeBoard , pk = free_id)
-    return render(request, 'free_detail.html' ,{'free_detail' : free_detail})
-
+class FreeDetail(HitCountDetailView):
+    model = FreeBoard
+    template_name = 'free_detail.html'
+    context_object_name = 'free_detail'
+    count_hit = True
 
 
 

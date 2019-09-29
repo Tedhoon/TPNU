@@ -2,6 +2,8 @@
 
 {% block contents %}
 {% load staticfiles %}
+{% load hitcount_tags %}
+
 <div class="board-Top">
     <div class="PageName">자유게시판</div>
 
@@ -28,7 +30,7 @@
             <td class="table-title"><a href="{%url 'free_detail' free.id%}">{{free.title}}</a></td>
             <td class="table-author">{{free.author}}</td>
             <td class="table-date">{{free.created_date}}</td>
-            <td class="table-hits">{{free.hits}}</td>
+            <td class="table-hits">{% get_hit_count for free %}</td>
         </tr>    
         </tbody>
         {% endfor %}

@@ -2,6 +2,7 @@
 {% block contents %}
 {% load staticfiles%}
 
+
 <div class="DetailContents">
 
     <div class="Writer">
@@ -10,6 +11,9 @@
         </div>
         <div class="writerName">{{notice_detail.author}}</div>
         <div class="writeTime">{{notice_detail.created_date}}</div>
+        
+
+
         <div class="ModifyRemove">
             {% if user.is_authenticated and user.username == notice_detail.author.username and user.is_staff %}
 

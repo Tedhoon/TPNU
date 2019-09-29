@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block contents %}
 {% load staticfiles %}
+{% load hitcount_tags %}
 
 
 <div class="PageName">공지게시판</div>
@@ -24,7 +25,7 @@
             <td class="table-title"><a href="{%url 'notice_detail' notice.id%}">{{notice.title|safe}}</a></td>
             <td class="table-author">{{notice.author}}</td>
             <td class="table-date">{{notice.created_date}}</td>
-            <td class="table-hits">{{notice.hits}}</td>
+            <td class="table-hits">{% get_hit_count for notice %}</td>
         </tr>    
         </tbody>
         {% endfor %}
@@ -32,7 +33,7 @@
     
         {%if user.is_authenticated and user.is_staff %}
         <div class="TextPlusBtn">
-        <a href="{% url 'notice_post'%}">글작성
+        <a href="{% url 'notice_post'%}">글작성    
             
         <!-- <img class="plusbtn" src="{% static 'img/add.png'%}"> -->
         </a>
