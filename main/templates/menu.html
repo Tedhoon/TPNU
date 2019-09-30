@@ -8,36 +8,47 @@
     <title>식단</title>
 
 
-
     
 <script>
     
 window.onload = function(){
         
 
-     // Get the modal
-     var modal = document.getElementById('myModal');
+     var modal1 = document.getElementById('myModal1');
  
-     // Get the button that opens the modal
-     var btn = document.getElementById("myBtn");
+     var btn1 = document.getElementById("myBtn1");
 
-     // Get the <span> element that closes the modal
-     var span = document.getElementsByClassName("close")[0];                                          
+     var span1 = document.getElementsByClassName("close1")[0];                                          
 
-     // When the user clicks on the button, open the modal 
-     btn.onclick = function() {
-         modal.style.display = "block";
+     btn1.onclick = function() {
+         modal1.style.display = "block";
      }
 
-     // When the user clicks on <span> (x), close the modal
-     span.onclick = function() {
-         modal.style.display = "none";
+     span1.onclick = function() {
+         modal1.style.display = "none";
      }
 
-     // When the user clicks anywhere outside of the modal, close it
+     //=====================================================
+
+     var modal2 = document.getElementById('myModal2');
+ 
+     var btn2 = document.getElementById("myBtn2");
+
+     var span2 = document.getElementsByClassName("close2")[0];                                          
+
+     btn2.onclick = function() {
+         modal2.style.display = "block";
+     }
+
+     span2.onclick = function() {
+         modal2.style.display = "none";
+     }
+
+     // 모달 둘다 끄기
      window.onclick = function(event) {
-         if (event.target == modal) {
-             modal.style.display = "none";
+         if (event.target == modal1 || event.target == modal2) {
+             modal1.style.display = "none";
+             modal2.style.display = "none";
          }
      }
     };
@@ -50,7 +61,7 @@ window.onload = function(){
         img{
             border-radius: 10px;
         }
-        .modal {
+        .modal1 , .modal2 {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
             z-index: 1; /* Sit on top */
@@ -72,27 +83,27 @@ window.onload = function(){
             width: 50%; /* Could be more or less, depending on screen size */                          
         }
         /* The Close Button */
-        .close {
+        .close1 ,.close2 {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
-        .close:hover,
-        .close:focus {
+        .close1:hover, .close2:hover,
+        .close1:focus, .close2:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
 
-        #myBtn {
+        #myBtn1 , #myBtn2 {
             float:left;
             margin: 20px;
             
         }
         .content_menu{
             text-align: center;
-            margin-left: 40%;
+            margin-left: 30%;
             margin-top : 20%;
         }
     
@@ -104,28 +115,45 @@ window.onload = function(){
 
 <div class ="content_menu">
     <!-- The Modal -->
-    <div id="myBtn">
+    <div id="myBtn1">
             <img width = "100px;" src = "{% static 'img/dorm.jpg' %}">
     </div>
 
-    <div id="myBtn">
+    <div id="myBtn2">
             <img width = "100px;" src = "{% static 'img/dorm2.jpg' %}">
     </div>
 </div>
 
  
+
+
+
+{% for menu in menu %}
+    <div style="display :none;">{{menu.update_counter}} </div>
+
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="myModal1" class="modal1">
  
       <!-- Modal content -->
       <div class="modal-content">
-        <span class="close">&times;</span>                                                               
-        <img width = "850px;" src = "{% static 'img/menu_test1.jpg' %}">
+        <span class="close1">&times;</span>                                                               
+        <img src ="{{menu.dorm_menu.url}}" width="100%">
       </div>
  
     </div>
 
 
+    <!-- The Modal -->
+    <div id="myModal2" class="modal2">
+ 
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close2">&times;</span>                                                               
+              <img src ="{{menu.hall_menu.url}}" width="100%">
+            </div>
+       
+          </div>
+{% endfor %}
 
 
 </body>

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'user',
     'ckeditor',
     'ckeditor_uploader',
+    'hitcount',
 ]
 
 MIDDLEWARE = [

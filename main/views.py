@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import MenuList
 # crawler
 # import requests
 # from bs4 import BeautifulSoup as bs
@@ -11,7 +11,7 @@ def index(request):
     return render(request , 'index.html')
 
 def menu(request):
-    
+    menu = MenuList.objects.all()
     
     # req = requests.get('https://dorm.pusan.ac.kr/mdorm/function/mealPlan/40000403')
     # html = req.text
@@ -23,7 +23,7 @@ def menu(request):
     #     menu_list = div.text
 
 
-    return render(request, 'menu.html')
+    return render(request, 'menu.html', {'menu' : menu})
 
 def bus(request):
     return render(request, 'bus.html')
