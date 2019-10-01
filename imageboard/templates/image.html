@@ -12,29 +12,109 @@
 <div class="photo-content">
 
     {% for image in images %}
+    <div id="{{forloop.counter}}" class ="helloimage" >
+
     <div class="imageContents">
-    
-    <a href="{%url 'image_detail' image.id%}">
-        
-        <div class="photoSpace">
-            <img class="image-photo"  src="{{image.image.url}}"><br>
-        </div>
-        <div class=photoText>
-            <div class="photoTag-tag">{{image.title}}</div>
-                <!-- title을 나중에 태그로 만들어주기 -->
+
+        <div class="photoSpace1">
+
+            <img class="image-photo" src="{{image.image.url}}">
             <div class="photoTag-likes">
-                <img class="heart" border-radius="2rem" src="{% static 'img/hearts.png' %}">
+                <img class="heart" border-radius="2rem" src="{% static 'img/heart2.png' %}">
                 <div class="heartNum">32</div>
-                <!-- {{image.likes}} -->
             </div>
 
         </div>
-    </a>
+    
     </div>
-     
+
+
+
+
+    <!-- the model -->
+    <div id="{{forloop.counter}}helloimage" class="mfp">
+
+    <div class="mfp-content">
+        
+        <div class="mfp-figure">
+            <!-- clase button -->
+            <div class="mfp-close">x</div>
+
+            <ul class="mfp-context">
+                <li class=""><img class="mfp-img2" alt="#spnuLife" src="{{image.image.url}}" style="max-width:570px;"></li>
+                <li class="mfp-title">{{image.title}}</li>
+                <li class="album-desc">{{image.desc}}</li>
+                <li class="album-created_date">{{image.created_date}}</li>
+                <li class="album-author">{{image.author}}</li>
+            </ul>
+        </div>
+    </div>
+        
+    </div>
+
+
+    </div>
     {% endfor %}
       
 </div>
+
+
+<script>
+
+    let span1;
+            
+            
+    window.onload = function(){
+            
+    
+        const num = document.getElementsByClassName("helloimage").length;
         
+
+        for(let i=1; i<=num; i++) {
+            
+
+
+            let btn = document.getElementById(i);
+            let modal = document.getElementById(i+"helloimage");
+            let span = document.getElementsByClassName("mfp-close")[0];
+
+            
+            
+            span1 = span;
+            
+            btn.onclick = function(){
+                modal.style.display = "block";
+            };
+
+
+    };    
+
+
+    span1.onclick = function(){
+            
+        for(i=1; i<num; i++){
+            
+            let modal1 = document.getElementById(i+"helloimage");
+            
+            console.log(modal1)
+            modal1.style.display = "none";   
+        }
+    };
+
+    window.onclick = function(event) {
+
+        for(i=1; i<num+1; i++){
+            let modal1 = document.getElementById(i+"helloimage");
+            
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+
+    };
+        
+    };
+
+</script>
 
 {% endblock contents %}
