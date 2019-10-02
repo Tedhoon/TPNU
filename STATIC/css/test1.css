@@ -327,9 +327,10 @@ td {
 }
 .Flower {
     float : left;
-    width : 80px;
+    width : 10%;
     /* background-color: red; */
-    
+    display : inline-block;
+    /* margin-right : 5%; */
 }
 
 .Writer {
@@ -338,14 +339,15 @@ td {
     margin-left : 90px;
     /* background-color : orange; */
     /* border-bottom : gray 1px solid; */
+    margin-bottom : 5%;
 }
 
 .writerName {
-    width : 100%;
+    width : 50%;
     /* background-color : green; */
     float : left;
-    /* margin-left : 15px; */
-    margin-top : 20px;
+    /* margin-left : 5%; */
+    /* margin-top : 5%; */
     margin-bottom : 5px;
     font-size : 13pt;
 }
@@ -353,7 +355,7 @@ td {
     width : 50%;
     /* background-color : green; */
     float : left;
-    /* margin-left : 15px; */
+    /* margin-left : 5%; */
     /* margin-top : 5px; */
     font-size : 10pt;
     color : gray;
@@ -538,6 +540,18 @@ td {
         /* background-color : orange; */
         /* padding-top : 60px; */
         /* border-bottom : gray 1px solid; */
+    }
+    .Flower {
+        min-width : 50px;
+    }
+    .writerName {
+        font-size : 10pt;
+    }
+    .writeTime {
+        font-size : 8pt;
+    }
+    .ModifyRemove {
+        font-size : 8pt;
     }
     .board-Text {
         /* background-color : red; */
