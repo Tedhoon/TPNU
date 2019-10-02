@@ -21,7 +21,7 @@
             <img class="image-photo" src="{{image.image.url}}">
             <div class="photoTag-likes">
                 <img class="heart" border-radius="2rem" src="{% static 'img/heart2.png' %}">
-                <div class="heartNum">32</div>
+                <div class="heartNum"></div>
             </div>
 
         </div>
@@ -38,14 +38,24 @@
         
         <div class="mfp-figure">
             <!-- clase button -->
-            <div class="mfp-close">x</div>
+            <div class="mfp-close"></div>
 
             <ul class="mfp-context">
                 <li class=""><img class="mfp-img2" alt="#spnuLife" src="{{image.image.url}}" style="max-width:570px;"></li>
+
                 <li class="mfp-title">{{image.title}}</li>
-                <li class="album-desc">{{image.desc}}</li>
-                <li class="album-created_date">{{image.created_date}}</li>
-                <li class="album-author">{{image.author}}</li>
+                <li class="mfp-desc">{{image.desc}}<br><br><br><br> </li>
+                <li>
+                    <div class="mfp-heart_hits">                
+                        <!-- <div class="mfp-heart">
+                            <img border-radius="2rem" src="{% static 'img/hearts.png' %}">
+                            <div class="mfp-heartNum">32</div>
+                        </div> -->
+                        <div class="mfp-hits">조회수 {{image.hits}}</div>
+                    </div>
+                </li>
+                <li class="mfp-created_date"><br>{{image.created_date}}</li>
+                <li class="mfp-author">{{image.author}}</li>
             </ul>
         </div>
     </div>
