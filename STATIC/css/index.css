@@ -24,14 +24,16 @@ body {
     font-weight: 550;
     width : 80px;
     height : 25px;
-    margin-right : 20px;
+    /* margin-right : -10px; */
     float : right;
-    position : fixed;
-    margin-left : 77%;
+    /* position : fixed; */
+    /* margin-left : 90%; */
     top : 0;
     font-size : 15pt;
-    background-color : rgb(193,217,200);
+    background-color : rgb(136, 123, 96);
     border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .LogInOut>a {
     text-decoration : none;
@@ -41,24 +43,31 @@ body {
 
 /* main */
 .Main {
-    margin-top : 50px;
+    /* margin-top : 20px; */
     height : 520px;
     width : 100%;
     text-align : center;
     padding-left : 0;
+    margin : 20px 0 0 0;
+
 }
 .BusandBab {
-    margin-top : 40px;
-    margin-bottom : 30px;
+    margin-top : 10px;
     width : 100%;
-    /* background-color: red; */
+    /* background : yellow;     */
+
 }
     .main-Bus {
         display : inline-block;
         width : 100px;
-        background : rgb(204,177,142);
-        color : black;
+        height : 25px;
+        /* background : rgb(217,210,204); */
+        border :2px solid rgb(235, 200, 132);
+
+        color : rgb(195,217,201);
+        font-size : 18pt;
         border-radius: 6px;
+        padding-bottom: 4px;
         margin-right : 5px;
     }
     .main-Bus>a {
@@ -66,9 +75,15 @@ body {
     }
     .main-Bab {
         display : inline-block;
-        background : rgb(204,177,142);
+        /* background : rgb(204,177,142); */
+        border :2px solid rgb(152, 216, 213);
+        /* background : rgb(212, 197, 184); */
+
         border-radius: 6px;
-        color : black;
+        height : 25px;
+        padding-bottom: 4px;
+        color : rgb(195,217,201);
+        font-size : 18pt;
         margin-left : 5px;
         width : 100px;
     }
@@ -79,26 +94,23 @@ body {
     width : 100%;
     text-align : center;
     height : 230px;
-    margin : 0 auto;
+    margin : -5px auto;
     /* font-family: 'Dokdo', cursive; */
 }
 .Icons {
-    width : 100px;
-    /* height : 100; */
+    width : 70%;
     float : left;
-    margin-left : 10px;
     margin-bottom : 30px;
-    /* background-color: green; */
+    padding-left:  16px;
 }
 .Icons>a {
     text-decoration : none;
-    color : black;
-    font-weight: 200;
+    font-weight: 100;
 }
 .photo {
-    width : 100px;
-    height : 100px;
-    background-color : rgb(170,165,125);
+    width : 70px;
+    height : 70px;
+    background-color : rgb(211, 165, 128);
     border-radius : 20rem;
     text-align : center;
     margin : 0 auto;
@@ -106,7 +118,7 @@ body {
 
 }
 .photo>img {
-    width :70px;
+    width :40px;
     height : auto;
     padding-top : 10px;
 }
@@ -126,18 +138,43 @@ body {
     width : 100%;
     height : 20%;
     text-align : center;
-    font-size : 16pt;
+    font-size : 14pt;
+    color : rgb(195,217,201);
 
 }
 
 .aa { 
-    width : 300px;
+    width : 320px;
     border-spacing: 0; 
     border-collapse:collapse; 
     margin:0 auto; 
-    padding: 0;
+    padding: 0 auto;
     text-align: center;
-    /* background-color: blueviolet; */
     margin-top : 50px;
 }
+
+@media (min-width : 1000px) {
+    .photo {
+        width : 100px;
+        height : 100px;
+    }
+
+    .photo>img {
+        width : 70px;
+    }
+    .main-Logo>img {
+        width : 500px;
+    }
+    .main-Bus {
+        width : 130px;
+    }
+    .main-Bab {
+        width : 130px;
+    }
+    .aa {
+        width : 500px;
+    }
+}
+
+
 
