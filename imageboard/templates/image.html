@@ -17,16 +17,15 @@
     <div class="imageContents">
 
         <div class="photoSpace1">
-
             <img class="image-photo" src="{{image.image.url}}">
-            <div class="photoTag-likes">
+            <!-- <div class="photoTag-likes">
                 <img class="heart" border-radius="2rem" src="{% static 'img/heart2.png' %}">
                 <div class="heartNum"></div>
-            </div>
-
+            </div> -->
         </div>
-    
+        <div class="image-title">{{image.title}}</div>    
     </div>
+
 
 
 
@@ -51,7 +50,7 @@
                             <img border-radius="2rem" src="{% static 'img/hearts.png' %}">
                             <div class="mfp-heartNum">32</div>
                         </div> -->
-                        <div class="mfp-hits">조회수 {{image.hits}}</div>
+                        <!-- <div class="mfp-hits">조회수 {{image.hits}}</div> -->
                     </div>
                 </li>
                 <li class="mfp-created_date"><br>{{image.created_date}}</li>

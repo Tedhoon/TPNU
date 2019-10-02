@@ -4,20 +4,20 @@
 }
 .imageContents {
     /* background-color: orange; */
-    width : 242px;
-    height : 242px;
+    width : 250px;
+    height : 250px;
     display : block;
     margin-right : 45px;
     margin-bottom: 80px;
-    border : solid 2px rgb(190, 190, 190);
     float : left;
     
 }
     .photoSpace1 {
-    /* background-color : purple; */
+    /* border : solid 2px rgb(190, 190, 190); */
     width : 240px;
     height : 240px;
-    /* overflow: hidden; */
+    box-shadow : 3px 3px 2px 1px rgba(94, 73, 64, 0.5);
+    margin-bottom : 3px;
 
     }
         .image-photo {
@@ -49,19 +49,30 @@
                 /* background-color : pink; */
                 float: right;
             } 
+
+@media (max-width : 430px) {
+    .mfp-content {
+        /* margin: 0; */
+        padding: 0px 20px;
+        width: 60%;
+        font-size : 9pt;
+        
+    }
+    .mfp-title {
+        margin-top :2px;
+    }
+}
             
             
-@media (max-width : 940px) {
+/* @media (max-width : 940px) {
     .imageContents {
         margin-right : 5px;
         margin-bottom : 7px;
         width : 28%;
         height : 5%;
-        /* background-color : red; */
     }
     .photoSpace1 {
         width : 100%;
-        /* background: blue; */
     }
     .image-photo {
         width : 25%;
@@ -83,7 +94,6 @@
         width : 100%;
         height : 180px;
 
-        /* background: blue; */
     }
     .image-photo {
         width : 25%;
@@ -109,7 +119,6 @@
         width : 100%;
         height : 133px;
 
-        /* background: blue; */
     }
     .image-photo {
         width : 25%;
@@ -135,7 +144,6 @@
         width : 100%;
         height : 108px;
 
-        /* background: blue; */
     }
     .image-photo {
         width : 25%;
@@ -162,7 +170,6 @@
         width : 100%;
         height : 85px;
 
-        /* background: blue; */
     }
     .image-photo {
         width : 25%;
@@ -178,7 +185,7 @@
         width : 10px;
         margin-top : 4px;
     }
-}
+} */
 
 /* 모달창 */
     /* The Modal (background) */
@@ -226,6 +233,10 @@
 .mfp-img2 {
     width : 100%;
     float : left;
+}
+.mfp-title {
+    width : 90%;
+    display : inline-block;
 }
 .mfp-heart_hits {
     width : 90%;
