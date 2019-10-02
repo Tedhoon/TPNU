@@ -2,7 +2,7 @@
 /* content */
 @import url('https://fonts.googleapis.com/css?family=Stylish&display=swap');
 .photo-content {
-    margin : 0 auto;
+    margin : 0 0 0 10%;
 }
 .imageContents {
     /* background-color: orange; */

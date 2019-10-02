@@ -2,9 +2,8 @@
 /* content */
 @import url('https://fonts.googleapis.com/css?family=Stylish&display=swap');
 .photo-content {
-    margin : 0 auto;
+    margin : 0 0 0 10%;
 }
-
 .imageContents {
     /* background-color: orange; */
     width : 250px;
@@ -210,8 +209,6 @@
         overflow: auto; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        /* font-family: 'Stylish', sans-serif; */
-
     }
     
     /* Modal Content/Box */
@@ -221,7 +218,6 @@
         padding: 10px 20px;
         border: 1px solid #888;
         width: 40%; /* Could be more or less, depending on screen size */                          
-
     }
     /* The Close Button */
     /* .mfp-close {
@@ -246,7 +242,6 @@
 .mfp-img2 {
     width : 100%;
     float : left;
-    /* margin-bottom : 50%; */
 }
 .mfp-title {
     width : 90%;

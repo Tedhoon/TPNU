@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700|Dokdo|East+Sea+Dokdo|Nanum+Pen+Script|Noto+Sans+JP:500,700,900|Titillium+Web:400,600,700,900&display=swap&subset=korean');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700|Dokdo|East+Sea+Dokdo|Nanum+Pen+Script|Noto+Sans+JP:500,700,900|Titillium+Web:400,600,700,900&display=swap&subset=korean');
+
 body {
     font-family: 'Noto Sans KR', sans-serif;
     background-color : white;
@@ -45,7 +47,7 @@ header {
     text-align: right;
     padding-top : 9px;
     font-size: 14pt;
-    font-family: 'Dokdo', cursive;
+    font-family: 'East Sea Dokdo', cursive;
     margin-right : 10px;
 
     /* background-color : pink; */
@@ -60,7 +62,7 @@ header {
     margin-right : 100px;
     text-decoration: none;
     color : black;
-    font-family: 'Dokdo', cursive;
+    font-family: 'East Sea Dokdo', cursive;
 }
 
 /* nav가 위에 있는 레이어 */
