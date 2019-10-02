@@ -1,4 +1,6 @@
+/* @import url('https://fonts.googleapis.com/css?family=Gamja+Flower&display=swap'); */
 /* content */
+@import url('https://fonts.googleapis.com/css?family=Stylish&display=swap');
 .photo-content {
     margin : 0 auto;
 }
@@ -12,6 +14,13 @@
     float : left;
     
 }
+    .image-title {
+        margin-top : 10px;
+        border-bottom: 2px ridge rgb(170,165,125);
+        font-family: 'Stylish', sans-serif;
+
+        /* border-left : 2px solid rgb(170,165,125); */
+    }
     .photoSpace1 {
     /* border : solid 2px rgb(190, 190, 190); */
     width : 240px;
