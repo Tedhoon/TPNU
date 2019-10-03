@@ -119,6 +119,7 @@ nav {
     text-align: left;
     /* background-color : pink; */
 }
+
 .nav-icon>img {
     margin-top : 0;
     width : 30px;
@@ -157,11 +158,14 @@ nav {
     font-size : 15pt;
     font-weight: 800;
     /* background-color : red; */
+    display : inline-block;
 }
+.notice-Icon {
+    width : 30%;
+    /* background-color : yellow; */
+    display : inline-block;
+    margin-left : 3px;
 
-.plusbtn {
-    width : 15px;
-    /* background-color: blue; */
 }
 
 
@@ -350,6 +354,13 @@ td {
     margin-left : 30px;
 }
 .Flower {
+    float : left;
+    width : 10%;
+    /* background-color: red; */
+    display : inline-block;
+    /* margin-right : 5%; */
+}
+.noticedetail-colorIcon {
     float : left;
     width : 10%;
     /* background-color: red; */
@@ -597,6 +608,13 @@ footer {
     .Flower {
         min-width : 50px;
     }
+    .noticedetail-colorIcon {
+        width : 50px;
+        padding-right : 2px;
+    }
+    .noticedetail-colorIcon>img {
+        width : 40px;
+    }
     .writerName {
         font-size : 10pt;
     }
@@ -684,5 +702,12 @@ footer {
     }
     .Writer {
         padding-top : 0;
+    }
+
+}
+@media (max-width : 1025px) {
+    .noticedetail-colorIcon {
+        /* width : 50px; */
+        padding-right : 10px;
     }
 }
