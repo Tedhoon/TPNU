@@ -113,14 +113,18 @@ nav {
     font-family: 'Poor Story', cursive;
 }
 .nav-iconName {
-    width : 70%;
+    margin-top : 6px;
+    display: inline-block;
+    width : 120px;
+    text-align: left;
+    /* background-color : pink; */
 }
 .nav-icon>img {
     margin-top : 0;
     width : 30px;
-    display : block;
-    float : right;
-    margin-right : 10px;
+    display : inline-block;
+    float : left;
+    margin-left : 10px;
     /* background-color : red; */
 }
 
@@ -637,16 +641,16 @@ footer {
         margin-top : 10px;
     }
     #NavLine1 {
-        border-top : rgb(83, 83, 83) 4px solid;
+        border-top : rgb(154,124,83) 4px solid;
         margin-bottom : 3px;
     }
     #NavLine2 {
-        border-top : rgb(83, 83, 83) 4px solid;
+        border-top : rgb(121,119,88) 4px solid;
         margin-bottom : 3px;
 
     }
     #NavLine3 {
-        border-top : rgb(83, 83, 83) 4px solid;
+        border-top : rgb(183,200,181) 4px solid;
     }
     .Login-In, .Login-Out {
         margin-right : 30px;
