@@ -6,9 +6,6 @@ from django.contrib.contenttypes.fields import GenericRelation
 
 
 
-# from django.contrib.auth.models import User
-
-
 class NoticeBoard(models.Model, HitCountMixin):
     
     title = models.CharField(max_length=100)
@@ -26,21 +23,6 @@ class NoticeBoard(models.Model, HitCountMixin):
         self.hits += 1
         self.save()
     
-
-    # class Meta:
-    #     author_name =     
-
-
-# from django.contrib.auth.models import User
-
-# author = models.ForienKey(User, ondelete =True , null= True , default=1)
-# class Comment(models.Model):
- 
-#     notice = models.ForeignKey(NoticeBoard, on_delete=True, null=True)
-#     comment_date = models.DateTimeField(auto_now_add=True)
-#     comment_user = models.TextField(max_length=20)
-#     comment_thumbnail_url = models.TextField(max_length=300)
-#     comment_textfield = models.TextField()
 
 class FreeBoard(models.Model, HitCountMixin):
     
